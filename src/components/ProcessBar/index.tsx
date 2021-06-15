@@ -8,15 +8,15 @@ interface StyledProcessBarProps {
 }
 
 const StyledProcessBar = styled.div<StyledProcessBarProps>`
-    width: ${props => props.width ?? 538}px;
-    height: ${props =>
-    props.stepSignSize && props.fontSize
-        ? props.stepSignSize + props.fontSize + 10
-        : 46}px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+  width: ${props => props.width ?? 538}px;
+  height: ${props =>
+          props.stepSignSize && props.fontSize
+                  ? props.stepSignSize + props.fontSize + 10
+                  : 46}px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 `;
 
 interface DescriptionGroupProps {
@@ -27,17 +27,17 @@ interface DescriptionGroupProps {
 }
 
 const DescriptionGroup = styled.div<DescriptionGroupProps>`
-    width: ${props =>
-    props.amountOfStep && props.barLength && props.stepSignSize
-        ? props.stepSignSize * props.amountOfStep +
-        props.barLength * (props.amountOfStep - 1) +
-        props.barLength
-        : 688}px;
-    height: ${props => (props.fontSize ? props.fontSize + 10 : 24)}px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    display: flex;
+  width: ${props =>
+          props.amountOfStep && props.barLength && props.stepSignSize
+                  ? props.stepSignSize * props.amountOfStep +
+                  props.barLength * (props.amountOfStep - 1) +
+                  props.barLength
+                  : 688}px;
+  height: ${props => (props.fontSize ? props.fontSize + 10 : 24)}px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
 `;
 
 interface StepDescriptionProps {
@@ -49,19 +49,19 @@ interface StepDescriptionProps {
 }
 
 const StepDescription = styled.div<StepDescriptionProps>`
-    width: ${props =>
-    props.amountOfStep && props.barLength && props.stepSignSize
-        ? (props.stepSignSize * props.amountOfStep +
-        props.barLength * (props.amountOfStep - 1) +
-        props.barLength) /
-        props.amountOfStep
-        : 172}px;
-    height: ${props => props.fontSize ?? 14}px;
-    font-size: ${props => props.fontSize ?? 14}px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: ${props => props.color ?? "#36a9fb"};
+  width: ${props =>
+          props.amountOfStep && props.barLength && props.stepSignSize
+                  ? (props.stepSignSize * props.amountOfStep +
+                  props.barLength * (props.amountOfStep - 1) +
+                  props.barLength) /
+                  props.amountOfStep
+                  : 172}px;
+  height: ${props => props.fontSize ?? 14}px;
+  font-size: ${props => props.fontSize ?? 14}px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: ${props => props.color ?? "#36a9fb"};
 `;
 
 interface BarGroupProps {
@@ -69,18 +69,18 @@ interface BarGroupProps {
 }
 
 const BarGroup = styled.div<BarGroupProps>`
-    width: 100%;
-    height: ${props => props.stepSignSize ?? 22}px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+  width: 100%;
+  height: ${props => props.stepSignSize ?? 22}px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 `;
 
 const StepSignAndBarGroup = styled.div`
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 `;
 
 interface StyledProcessBarStepSectionProps {
@@ -93,15 +93,15 @@ interface StyledProcessBarStepSectionProps {
 }
 
 const StyledProcessBarStepSection = styled.div<StyledProcessBarStepSectionProps>`
-    width: ${props => props.size ?? 22}px;
-    height: ${props => props.size ?? 22}px;
-    border-radius: ${props => (props.shape === "square" ? "2px" : "50%")};
-    background-color: ${props => props.backgroundColor ?? "#36a9fa"};
-    color: ${props => props.color ?? "white"};
-    font-size: ${props => props.fontSize ?? 14}px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: ${props => props.size ?? 22}px;
+  height: ${props => props.size ?? 22}px;
+  border-radius: ${props => (props.shape === "square" ? "2px" : "50%")};
+  background-color: ${props => props.backgroundColor ?? "#36a9fa"};
+  color: ${props => props.color ?? "white"};
+  font-size: ${props => props.fontSize ?? 14}px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 interface StyledProcessBarBarSectionProps {
@@ -114,14 +114,14 @@ interface StyledProcessBarBarSectionProps {
 }
 
 const StyledProcessBarBarSection = styled.div<StyledProcessBarBarSectionProps>`
-    width: ${props => props.width ?? 150}px;
-    height: ${props => props.height ?? 2}px;
-    background-color: ${props => props.backgroundColor ?? "#36a9fa"};
+  width: ${props => props.width ?? 150}px;
+  height: ${props => props.height ?? 2}px;
+  background-color: ${props => props.backgroundColor ?? "#36a9fa"};
 `;
 
 interface ProcessBarProps {
     width?: number;
-    stepsSign?: string[];
+    stepSigns?: string[];
     completeSign?: string;
     descriptions?: string[];
     fontSize?: number;
@@ -147,17 +147,11 @@ export const ProcessBar = React.memo((props: ProcessBarProps) => {
         );
     }, [props.descriptions]);
 
-    const [stepsSign, setStepsSign] = useState<string[]>(["1", "2", "3"]);
+    const [stepSigns, setStepsSign] = useState<string[]>(["1", "2", "3"]);
 
     useEffect(() => {
-        setStepsSign(props.stepsSign ?? ["1", "2", "3"]);
-    }, [props.stepsSign]);
-
-    const [completeSign, setCompleteSign] = useState<string>("✓");
-
-    useEffect(() => {
-        setCompleteSign(props.completeSign ?? "✓");
-    }, [props.completeSign]);
+        setStepsSign(props.stepSigns ?? ["1", "2", "3"]);
+    }, [props.stepSigns]);
 
     const [fontSize, setFontSize] = useState<number>(14);
 
@@ -167,11 +161,11 @@ export const ProcessBar = React.memo((props: ProcessBarProps) => {
 
     const [barLength, setBarLength] = useState<number>(150);
     useEffect(() => {
-        if (props.width && props.stepSignSize && props.stepsSign) {
+        if (props.width && props.stepSignSize && props.stepSigns) {
             const barLength =
                 (props.width -
-                    props.stepSignSize * (props.stepsSign.length + 1)) /
-                props.stepsSign.length;
+                    props.stepSignSize * (props.stepSigns.length + 1)) /
+                props.stepSigns.length;
             setBarLength(barLength);
         }
     }, [props.width, props.stepSignSize]);
@@ -195,7 +189,7 @@ export const ProcessBar = React.memo((props: ProcessBarProps) => {
                             fontSize={props.fontSize}
                             barLength={barLength}
                             amountOfStep={
-                                props.stepsSign && props.stepsSign.length
+                                props.stepSigns && props.stepSigns.length
                             }
                             stepSignSize={props.stepSignSize}
                         >
@@ -205,25 +199,29 @@ export const ProcessBar = React.memo((props: ProcessBarProps) => {
                 })}
             </DescriptionGroup>
             <BarGroup stepSignSize={props.stepSignSize}>
-                {stepsSign &&
-                stepsSign.map((stepsSign, index) => {
-                    return (
+                {stepSigns &&
+                stepSigns.map((stepSign, index) => {
+                    console.info("stepSign", stepSign);
+                    return index < stepSigns.length - 1 ? (
                         <StepSignAndBarGroup key={"step_" + index}>
                             <StyledProcessBarStepSection
                                 size={props.stepSignSize}
                                 fontSize={props.fontSize}
                             >
-                                {stepsSign}
+                                {stepSign}
                             </StyledProcessBarStepSection>
                             <StyledProcessBarBarSection width={barLength} />
                         </StepSignAndBarGroup>
+                    ) : (
+                        <StepSignAndBarGroup>
+                            <StyledProcessBarStepSection
+                                size={props.stepSignSize}
+                            >
+                                {stepSign}
+                            </StyledProcessBarStepSection>
+                        </StepSignAndBarGroup>
                     );
                 })}
-                <StepSignAndBarGroup>
-                    <StyledProcessBarStepSection size={props.stepSignSize}>
-                        {completeSign}
-                    </StyledProcessBarStepSection>
-                </StepSignAndBarGroup>
             </BarGroup>
         </StyledProcessBar>
     );
