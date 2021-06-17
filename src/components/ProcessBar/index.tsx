@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef} from "react";
+import React, {useEffect, useState, useRef, useCallback} from "react";
 import styled from "styled-components";
 
 interface StyledProcessBarProps {
@@ -107,14 +107,14 @@ const StyledProcessBarStepSection = styled.div<StyledProcessBarStepSectionProps>
 interface StyledProcessBarBarSectionProps {
     backgroundColor?: string;
     color?: string;
-    width?: number;
+    barLength?: number;
     height?: number;
     stepSectionSize?: number;
     distanceToMoveLeft?: number;
 }
 
 const StyledProcessBarBarSection = styled.div<StyledProcessBarBarSectionProps>`
-  width: ${props => props.width ?? 150}px;
+  width: ${props => props.barLength ?? 150}px;
   height: ${props => props.height ?? 2}px;
   background-color: ${props => props.backgroundColor ?? "#36a9fa"};
 `;
@@ -122,10 +122,13 @@ const StyledProcessBarBarSection = styled.div<StyledProcessBarBarSectionProps>`
 interface ProcessBarProps {
     width?: number;
     stepSigns?: string[];
-    completeSign?: string;
     descriptions?: string[];
     fontSize?: number;
     stepSignSize?: number;
+    processingStepColor?: string;
+    notProcessedYetStepColor?: string;
+    currentProcessingStep?: number;
+    barHeight?: number;
 }
 
 export const ProcessBar = React.memo((props: ProcessBarProps) => {
@@ -135,7 +138,6 @@ export const ProcessBar = React.memo((props: ProcessBarProps) => {
         "步驟三四五六七八九十",
         "完成",
     ]);
-
     useEffect(() => {
         setDescriptions(
             props.descriptions ?? [
@@ -153,22 +155,25 @@ export const ProcessBar = React.memo((props: ProcessBarProps) => {
         setStepsSign(props.stepSigns ?? ["1", "2", "3"]);
     }, [props.stepSigns]);
 
-    const [fontSize, setFontSize] = useState<number>(14);
-
-    useEffect(() => {
-        setFontSize(props.fontSize ?? 14);
-    }, [props.fontSize]);
-
     const [barLength, setBarLength] = useState<number>(150);
     useEffect(() => {
         if (props.width && props.stepSignSize && props.stepSigns) {
             const barLength =
-                (props.width -
-                    props.stepSignSize * (props.stepSigns.length + 1)) /
-                props.stepSigns.length;
+                (props.width - props.stepSignSize * props.stepSigns.length) /
+                (props.stepSigns.length - 1);
             setBarLength(barLength);
         }
     }, [props.width, props.stepSignSize]);
+
+    const toDecideColor = useCallback(
+        (index: number) => {
+            return props.currentProcessingStep &&
+            props.currentProcessingStep >= index + 1
+                ? props.processingStepColor
+                : props.notProcessedYetStepColor;
+        },
+        [props.currentProcessingStep]
+    );
 
     return (
         <StyledProcessBar
@@ -192,6 +197,7 @@ export const ProcessBar = React.memo((props: ProcessBarProps) => {
                                 props.stepSigns && props.stepSigns.length
                             }
                             stepSignSize={props.stepSignSize}
+                            color={toDecideColor(index)}
                         >
                             {description}
                         </StepDescription>
@@ -201,21 +207,26 @@ export const ProcessBar = React.memo((props: ProcessBarProps) => {
             <BarGroup stepSignSize={props.stepSignSize}>
                 {stepSigns &&
                 stepSigns.map((stepSign, index) => {
-                    console.info("stepSign", stepSign);
                     return index < stepSigns.length - 1 ? (
                         <StepSignAndBarGroup key={"step_" + index}>
                             <StyledProcessBarStepSection
                                 size={props.stepSignSize}
                                 fontSize={props.fontSize}
+                                backgroundColor={toDecideColor(index)}
                             >
                                 {stepSign}
                             </StyledProcessBarStepSection>
-                            <StyledProcessBarBarSection width={barLength} />
+                            <StyledProcessBarBarSection
+                                barLength={barLength}
+                                backgroundColor={toDecideColor(index)}
+                                height={props.barHeight}
+                            />
                         </StepSignAndBarGroup>
                     ) : (
                         <StepSignAndBarGroup>
                             <StyledProcessBarStepSection
                                 size={props.stepSignSize}
+                                backgroundColor={toDecideColor(index)}
                             >
                                 {stepSign}
                             </StyledProcessBarStepSection>
