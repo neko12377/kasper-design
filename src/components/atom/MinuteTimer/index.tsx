@@ -11,7 +11,7 @@ const StyledMinuteTimer = styled.div`
     color: #8762d2;
 `;
 
-interface MinuteTimerProps {
+export interface MinuteTimerProps {
     leftTime: string;
 }
 

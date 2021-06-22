@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef, useCallback} from "react";
+import React, {useEffect, useState, useCallback} from "react";
 import styled from "styled-components";
 
 interface StyledProcessBarProps {
@@ -119,7 +119,7 @@ const StyledProcessBarBarSection = styled.div<StyledProcessBarBarSectionProps>`
   background-color: ${props => props.backgroundColor ?? "#36a9fa"};
 `;
 
-interface ProcessBarProps {
+export interface ProcessBarProps {
     width?: number;
     stepSigns?: string[];
     descriptions?: string[];
@@ -149,10 +149,10 @@ export const ProcessBar = React.memo((props: ProcessBarProps) => {
         );
     }, [props.descriptions]);
 
-    const [stepSigns, setStepsSign] = useState<string[]>(["1", "2", "3"]);
+    const [stepSigns, setStepsSign] = useState<string[]>(["1", "2", "3", "✓"]);
 
     useEffect(() => {
-        setStepsSign(props.stepSigns ?? ["1", "2", "3"]);
+        setStepsSign(props.stepSigns ?? ["1", "2", "3", "✓"]);
     }, [props.stepSigns]);
 
     const [barLength, setBarLength] = useState<number>(150);
@@ -223,7 +223,7 @@ export const ProcessBar = React.memo((props: ProcessBarProps) => {
                             />
                         </StepSignAndBarGroup>
                     ) : (
-                        <StepSignAndBarGroup>
+                        <StepSignAndBarGroup key={"step_" + index}>
                             <StyledProcessBarStepSection
                                 size={props.stepSignSize}
                                 backgroundColor={toDecideColor(index)}
