@@ -1,8 +1,8 @@
 import React from "react";
-import {Button} from "module/home/component/atom/Button";
+import {Button} from "components/atom/Button";
 
 interface CopyButtonProps {
-    children?: React.ReactElement | string;
+    children?: React.ReactNode;
     targetRef: React.MutableRefObject<any>;
     buttonRef: React.MutableRefObject<HTMLButtonElement>;
 }
