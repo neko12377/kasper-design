@@ -14,7 +14,6 @@ export const parameters = {
             {name: "light", value: "#f9fafc"},
             {name: "dark", value: "#23252f"},
             {name: "red", value: "#f00"},
-
         ]
     },
 }
@@ -26,7 +25,7 @@ const Base = styled.div`
 `;
 
 export const decorators = [
-    (Story) => (
+    (Story: any) => (
         <Base>
             <Story/>
         </Base>
