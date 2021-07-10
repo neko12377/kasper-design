@@ -1,10 +1,10 @@
 import React, {useRef} from "react";
-import {Button, ButtonProps} from "./index";
+import {ButtonWithRef, ButtonProps} from "./index";
 import {Story} from "@storybook/react";
 
 export default {
     title: "Components/Button",
-    component: Button,
+    component: ButtonWithRef,
     argTypes: {handleClick: {action: "clicked"}, children: {defaultValue: "Button"}}
 }
 
@@ -22,7 +22,7 @@ const BasicTemplate: Story<ButtonProps> = (args) => {
     args.handleLeave = () => {
         buttonRef.current.style.backgroundColor = "#fc5c4f";
     }
-    return <Button {...args} ref={buttonRef} />
+    return <ButtonWithRef {...args} ref={buttonRef} />
 }
 export const Basic = BasicTemplate.bind({});
 Basic.args = {
@@ -43,7 +43,7 @@ const LakeTemplate: Story<ButtonProps> = (args) => {
     args.handleLeave = () => {
         buttonRef.current.style.backgroundColor = "#7dd3d3";
     }
-    return <Button {...args} ref={buttonRef} />
+    return <ButtonWithRef {...args} ref={buttonRef} />
 }
 
 export const Lake = LakeTemplate.bind({});

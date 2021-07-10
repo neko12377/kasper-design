@@ -46,7 +46,7 @@ export interface ButtonProps extends StyledButtonProps {
     handleClick?: () => void;
 }
 
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+export const ButtonWithRef = React.forwardRef<HTMLButtonElement, ButtonProps>(
     (props, ref) => {
         const handlePress = () => {
             props.handlePress && props.handlePress();

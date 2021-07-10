@@ -1,7 +1,8 @@
 {
   "name": "kasper-design",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "files": "dist",
   "repository": "git@github.com-neko:neko12377/kasper-design.git",
   "author": "Kasper Chen <neko12377@users.noreply.github.com>",
   "license": "MIT",

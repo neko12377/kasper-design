@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -58,7 +58,7 @@ export interface FileUploaderProps {
 }
 
 export const FileUploader = (props: FileUploaderProps) => {
-    const [preview, setPreview] = useState("")
+    const [preview, setPreview] = useState("");
     const pictPicture = (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
         const fileReader = new FileReader();
