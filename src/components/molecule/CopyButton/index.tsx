@@ -1,5 +1,5 @@
 import React from "react";
-import {Button} from "../../atom/ButtonWithRef";
+import {ButtonWithRef} from "components/atom/ButtonWithRef";
 
 interface CopyButtonProps {
     children?: React.ReactNode;
@@ -44,7 +44,7 @@ export const CopyButton = (props: CopyButtonProps) => {
         buttonRef.current.style.color = "#ffffff";
     };
     return (
-        <Button
+        <ButtonWithRef
             backgroundImage="linear-gradient(to top, #f7f7f7, #ffffff)"
             backgroundColor="none"
             borderColor="#b6b6b6"
@@ -59,6 +59,6 @@ export const CopyButton = (props: CopyButtonProps) => {
             handleUp={() => handleUp(props.buttonRef)}
         >
             {props.children}
-        </Button>
+        </ButtonWithRef>
     );
 };
