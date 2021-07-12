@@ -108,8 +108,8 @@ https://github.com/neko12377/kasper-design</a>
 <td>
 <ul>
 <li>children?: React.ReactNode</li>
-<li>targetRef: React.MutableRefObject&#60any&gt</li>
-<li>buttonRef: React.MutableRefObject&#60HTMLButtonElement&gt</li>
+<li>targetRef: React.MutableRefObject&#60any&#62</li>
+<li>buttonRef: React.MutableRefObject&#60HTMLButtonElement&#62</li>
 </ul>
 </td>
 </tr>
