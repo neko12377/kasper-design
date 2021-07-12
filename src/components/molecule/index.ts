@@ -1,1 +1,3 @@
-export {CopyButton} from "./CopyButton";
+import {CopyButton} from "./CopyButton";
+
+export {CopyButton};

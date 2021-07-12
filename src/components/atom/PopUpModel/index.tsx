@@ -36,7 +36,7 @@ const MessageSection = styled.div<MessageSectionProps>`
     width: 100%;
 `;
 
-interface PoPUpModelProps extends StyledPopUpModelProps {
+export interface PoPUpModelProps extends StyledPopUpModelProps {
     children?: React.ReactNode;
     message?: string;
     icon?: React.ReactElement;

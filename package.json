@@ -1,6 +1,6 @@
 {
   "name": "kasper-design",
-  "version": "1.0.1",
+  "version": "1.0.14",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -14,10 +14,6 @@
     "build-storybook": "build-storybook -o docs",
     "build": "webpack"
   },
-  "dependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  },
   "devDependencies": {
     "@storybook/addon-actions": "^6.2.9",
     "@storybook/addon-essentials": "^6.2.9",
@@ -26,14 +22,13 @@
     "@types/react": "^17.0.11",
     "@types/react-dom": "^17.0.6",
     "@types/styled-components": "^5.1.10",
-    "awesome-typescript-loader": "^5.2.1",
-    "clean-webpack-plugin": "^4.0.0-alpha.0",
-    "dts-bundle-generator": "^5.9.0",
     "storybook": "^6.2.9",
-    "styled-components": "^5.3.0",
     "ts-loader": "^9.2.3",
-    "typescript": "^4.3.4",
-    "webpack": "^5.44.0",
-    "webpack-cli": "^4.7.2"
+    "typescript": "^4.3.4"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.3.0"
   }
 }

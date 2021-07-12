@@ -1,7 +1,7 @@
 import React from "react";
-import {ButtonWithRef} from "components/atom/ButtonWithRef";
+import {ButtonWithRef} from "../../atom/ButtonWithRef";
 
-interface CopyButtonProps {
+export interface CopyButtonProps {
     children?: React.ReactNode;
     targetRef: React.MutableRefObject<any>;
     buttonRef: React.MutableRefObject<HTMLButtonElement>;

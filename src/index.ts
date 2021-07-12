@@ -1,2 +1,4 @@
-export * as Atom from "components/atom";
-export * as Molecule from "components/molecule";
+import * as Atom from "./components/atom";
+import * as Molecule from "./components/molecule";
+
+export {Atom, Molecule}
