@@ -2,9 +2,9 @@
 <hr />
 <center>Use styled-components to build React-Components</center>
 <center>I will update this package continuously</center>
-<center>github: 
-<a href="https://github.com/neko12377/kasper-design" style="color: #cb3837; text-decoration: none; font-weight: 900">
-https://github.com/neko12377/kasper-design</a> 
+<center>demo: 
+<a href="https://neko12377.github.io/kasper-design/?path=/story/components-buttonwithref--basic" style="color: #cb3837; text-decoration: none; font-weight: 900">
+GO</a> 
 </center>
 <h2>Recap</h2>
 <hr />
