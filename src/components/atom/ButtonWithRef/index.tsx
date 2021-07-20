@@ -44,24 +44,47 @@ export interface ButtonProps extends StyledButtonProps {
     handleLeave?: () => void;
     handleHover?: () => void;
     handleClick?: () => void;
+    handleTouchStart?: () => void;
+    handleTouchEnd?: () => void;
 }
 
 export const ButtonWithRef = React.forwardRef<HTMLButtonElement, ButtonProps>(
     (props, ref) => {
+        const isMobile = () => {
+            if (
+                navigator.userAgent.match(/Android/i) ||
+                navigator.userAgent.match(/webOS/i) ||
+                navigator.userAgent.match(/iPhone/i) ||
+                navigator.userAgent.match(/iPad/i) ||
+                navigator.userAgent.match(/iPod/i) ||
+                navigator.userAgent.match(/BlackBerry/i) ||
+                navigator.userAgent.match(/Windows Phone/i)
+            ) {
+                return true;
+            }
+
+            return false;
+        };
         const handlePress = () => {
-            props.handlePress && props.handlePress();
+            !isMobile() && props.handlePress && props.handlePress();
         };
         const handleUp = () => {
-            props.handleUp && props.handleUp();
+            !isMobile() && props.handleUp && props.handleUp();
         };
         const handleLeave = () => {
-            props.handleLeave && props.handleLeave();
+            !isMobile() && props.handleLeave && props.handleLeave();
         };
         const handleHover = () => {
-            props.handleHover && props.handleHover();
+            !isMobile() && props.handleHover && props.handleHover();
         };
         const handleClick = () => {
             props.handleClick && props.handleClick();
+        };
+        const handleTouchStart = () => {
+            isMobile() && props.handleTouchStart && props.handleTouchStart();
+        };
+        const handleTouchEnd = () => {
+            isMobile() && props.handleTouchEnd && props.handleTouchEnd();
         };
         return (
             <StyledButton
@@ -81,6 +104,8 @@ export const ButtonWithRef = React.forwardRef<HTMLButtonElement, ButtonProps>(
                 onMouseOver={() => handleHover()}
                 onClick={() => handleClick()}
                 ref={ref}
+                onTouchStart={() => handleTouchStart()}
+                onTouchEnd={() => handleTouchEnd()}
             >
                 {props.children}
             </StyledButton>

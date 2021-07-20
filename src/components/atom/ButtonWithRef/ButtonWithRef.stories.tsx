@@ -22,6 +22,12 @@ const BasicTemplate: Story<ButtonProps> = (args) => {
     args.handleLeave = () => {
         buttonRef.current.style.backgroundColor = "#fc5c4f";
     }
+    args.handleTouchStart = () => {
+        buttonRef.current.style.backgroundColor = "#e74d32";
+    }
+    args.handleTouchEnd = () => {
+        buttonRef.current.style.backgroundColor = "#fc5c4f";
+    }
     return <ButtonWithRef {...args} ref={buttonRef} />
 }
 export const Basic = BasicTemplate.bind({});
@@ -41,6 +47,12 @@ const LakeTemplate: Story<ButtonProps> = (args) => {
         buttonRef.current.style.backgroundColor = "#7dd3d3"
     }
     args.handleLeave = () => {
+        buttonRef.current.style.backgroundColor = "#7dd3d3";
+    }
+    args.handleTouchStart = () => {
+        buttonRef.current.style.backgroundColor = "#50c6c6";
+    }
+    args.handleTouchEnd = () => {
         buttonRef.current.style.backgroundColor = "#7dd3d3";
     }
     return <ButtonWithRef {...args} ref={buttonRef} />
