@@ -11,8 +11,7 @@
   "license": "MIT",
   "scripts": {
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -o docs",
-    "build": "webpack"
+    "build-storybook": "build-storybook -o docs"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^6.2.9",
@@ -25,6 +24,11 @@
     "storybook": "^6.2.9",
     "ts-loader": "^9.2.3",
     "typescript": "^4.3.4"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.3.0"
   },
   "peerDependencies": {
     "react": "^17.0.2",
