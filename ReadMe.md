@@ -20,6 +20,7 @@ GO</a>
 </ul>
 </li>
 <li><a href="#molecule" style="color: #cb3837; text-decoration: none; font-weight: 900">Molecule</a></li>
+<li><a href="#hook" style="color: #cb3837; text-decoration: none; font-weight: 900">Hook</a></li>
 </ol>
 <hr />
 <h3 id="install"><center>Install</center></h3>
@@ -112,5 +113,21 @@ GO</a>
 <li>buttonRef: React.MutableRefObject&#60HTMLButtonElement&#62</li>
 </ul>
 </td>
+</tr>
+</table>
+<h3 id="hook"><center>Hook</center></h3>
+<hr />
+<table style="width: 100%">
+<tr style="width: 100%">
+<th style="width: 30%">name</th>
+<th style="width: 70%">functionality</th>
+</tr>
+<tr>
+<td>useWindowResize</td>
+<td>listen to window resize</td>
+</tr>
+<tr>
+<td>useDebounce</td>
+<td>prevent too many request</td>
 </tr>
 </table>
