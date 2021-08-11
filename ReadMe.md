@@ -19,7 +19,13 @@ GO</a>
 <li>ProcessBar</li>
 </ul>
 </li>
-<li><a href="#molecule" style="color: #cb3837; text-decoration: none; font-weight: 900">Molecule</a></li>
+<li><a href="#molecule" style="color: #cb3837; text-decoration: none; font-weight: 900">Molecule</a>
+<ul>
+<li>
+CopyButton
+</li>
+</ul>
+</li>
 <li><a href="#hook" style="color: #cb3837; text-decoration: none; font-weight: 900">Hook</a></li>
 </ol>
 <hr />
