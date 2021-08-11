@@ -33,7 +33,7 @@ const StyledStepSection = styled.div<StyledStepSectionProps>`
     width: ${props => props.size ?? 22}px;
     height: ${props => props.size ?? 22}px;
     border-radius: ${props => (props.shape === "square" ? "2px" : "50%")};
-    background-color: ${props => props.backgroundColor ?? "#36a9fa"};
+    background-color: ${props => props.backgroundColor ?? "#c2d3e0"};
     color: ${props => props.color ?? "white"};
     font-size: ${props => props.fontSize ?? 14}px;
     display: flex;
