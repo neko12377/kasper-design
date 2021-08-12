@@ -10,12 +10,13 @@ export const parameters = {
         },
     },
     backgrounds: {
+        default: "dark",
         values: [
             {name: "light", value: "#f9fafc"},
             {name: "dark", value: "#23252f"},
-            {name: "red", value: "#f00"},
         ]
     },
+    layout: "centered",
 }
 
 const Base = styled.div`
