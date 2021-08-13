@@ -13,7 +13,8 @@ export const parameters = {
         default: "dark",
         values: [
             {name: "light", value: "#f9fafc"},
-            {name: "dark", value: "#23252f"},
+            {name: "dark", value: "linear-gradient(45deg, #000205, #022d69, #000205);" },
+            {name: "red-dark", value: "linear-gradient(45deg, black, red, black)"},
         ]
     },
     layout: "centered",
