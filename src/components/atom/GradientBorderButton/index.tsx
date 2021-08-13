@@ -12,16 +12,17 @@ const Button = styled.div<ButtonProps>`
   border-radius: 8px;
   background-color: #fff;
   position: relative;
+  cursor: pointer;
 
   &:before, &:after {
     content: "";
     position: absolute;
-    inset: 0;
     background: linear-gradient(-45deg, #ee7752, rgba(231, 60, 126, 0.55), rgba(35, 166, 213, 0.51), #23d5ab);
-    border-radius: 10px;
+    inset: 5px;
+    border-radius: 8px;
     transition: 0.5s;
     background-size: 400% 400%;
-    animation: borderAnimation 8s ease infinite;
+    animation: gradient 8s ease infinite;
   }
 
   &:hover::before {
@@ -33,7 +34,7 @@ const Button = styled.div<ButtonProps>`
     filter: blur(10px);
   }
 
-  @keyframes borderAnimation {
+  @keyframes gradient {
     0% {
       background-position: 0% 50%;
     }
@@ -61,6 +62,11 @@ const ButtonInner = styled.span`
   font-size: 1.2em;
   text-transform: uppercase;
   color: #fff;
+  filter: blur(1px);
+
+  &:hover {
+    filter: blur(0);
+  }
 `;
 
 export interface GradientBorderButtonProps extends ButtonProps {
