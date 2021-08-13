@@ -8,6 +8,8 @@ const Wrapper = styled.div`
   justify-content: flex-end;
   align-items: center;
   column-gap: 10px;
+  flex-direction: column;
+  row-gap: 10px;
 `;
 
 const UploadImgBlock = styled.img`
@@ -30,10 +32,10 @@ const UploadImgInputLabel = styled.label.attrs({for: "uploadInput"})`
   align-items: center;
   width: 120px;
   height: 28px;
-  border: solid 1px #b6b6b6;
+  min-height: 28px;
   border-radius: 4px;
   box-shadow: 0px 1px 3px 0 rgba(6, 0, 0, 0.2);
-  background-image: linear-gradient(to top, #f7f7f7, #ffffff);
+  background-image: linear-gradient(315deg, #ffec61, #f321d7);
   color: #5e5e5e;
   font-style: normal;
   font-variant-ligatures: normal;
@@ -45,13 +47,43 @@ const UploadImgInputLabel = styled.label.attrs({for: "uploadInput"})`
   font-size: 14px;
   line-height: normal;
   cursor: pointer;
+  position: relative;
+  
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(315deg, #ffec61, #f321d7);
+    filter: blur(10px);
+    transform: translateY(35px) scale(0.9);
+  }
+  
+  & span {
+    position: relative;
+    color: #0350c7;
+    font-weight: 600;
+  }
 
   &:hover {
-    background-color: #52c8f9;
-    border: 1px solid #35bff8;
-    background-image: none;
-    color: #ffffff;
+    background-image: linear-gradient(315deg, #ffec61, #f321d7);
+    background-size: 200% 400%;
+    animation: gradient ease infinite 6s;
   }
+  
+  @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }  
+    }
 `;
 
 export interface FileUploaderProps {
@@ -72,7 +104,7 @@ export const FileUploader = (props: FileUploaderProps) => {
             <UploadImgBlock src={preview}/>
             <UploadImgInput onChange={pictPicture}/>
             <UploadImgInputLabel>
-                pick a picture
+                <span>pick a picture</span>
             </UploadImgInputLabel>
         </Wrapper>
     )

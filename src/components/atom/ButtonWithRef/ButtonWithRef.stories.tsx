@@ -3,7 +3,7 @@ import {ButtonWithRef, ButtonProps} from "./index";
 import {Story} from "@storybook/react";
 
 export default {
-    title: "Components/ButtonWithRef",
+    title: "Components/atom/ButtonWithRef",
     component: ButtonWithRef,
     argTypes: {handleClick: {action: "clicked"}, children: {defaultValue: "Button"}}
 }

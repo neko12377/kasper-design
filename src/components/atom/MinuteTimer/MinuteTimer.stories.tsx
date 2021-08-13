@@ -2,7 +2,7 @@ import React from "react"
 import {MinuteTimer, MinuteTimerProps} from "./index";
 
 export default {
-    title: "Components/MinuteTimer",
+    title: "Components/atom/MinuteTimer",
     component: MinuteTimer,
     argTypes: {leftTime: {defaultValue: "05:00"}}
 }

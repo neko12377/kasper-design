@@ -3,7 +3,7 @@ import {GradientBorderButton, GradientBorderButtonProps} from "./index";
 import {Story} from "@storybook/react";
 
 export default {
-    title: "Components/GradientBorderButton",
+    title: "Components/atom/GradientBorderButton",
     component: GradientBorderButton,
     argTypes: {width: {defaultValue: 160}}
 }

@@ -11,7 +11,8 @@
   "license": "MIT",
   "scripts": {
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -o docs"
+    "build-storybook": "build-storybook -o docs",
+    "build-npmpackage": "tsc --project tsconfig.json"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^6.2.9",

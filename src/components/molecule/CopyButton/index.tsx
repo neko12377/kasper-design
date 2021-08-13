@@ -15,41 +15,41 @@ export const CopyButton = (props: CopyButtonProps) => {
     const handleHover = (
         buttonRef: React.MutableRefObject<HTMLButtonElement>
     ) => {
-        buttonRef.current.style.backgroundColor = "#52c8f9";
-        buttonRef.current.style.border = "1px solid #35bff8";
-        buttonRef.current.style.backgroundImage = "none";
-        buttonRef.current.style.color = "#ffffff";
+        buttonRef.current.style.backgroundColor = "none";
+        buttonRef.current.style.border = "none";
+        buttonRef.current.style.backgroundImage = "linear-gradient(-220deg, rgb(35, 166, 213), #23d5ab)";
+        buttonRef.current.style.color = "#5e5e5e";
     };
     const handleLeave = (
         buttonRef: React.MutableRefObject<HTMLButtonElement>
     ) => {
         buttonRef.current.style.backgroundColor = "none";
-        buttonRef.current.style.border = "solid 1px #b6b6b6";
+        buttonRef.current.style.border = "none";
         buttonRef.current.style.backgroundImage =
-            "linear-gradient(to top, #f7f7f7, #ffffff)";
+            "linear-gradient(-60deg, rgb(35, 166, 213), #23d5ab)";
         buttonRef.current.style.color = "#5e5e5e";
     };
     const handlePress = (
         buttonRef: React.MutableRefObject<HTMLButtonElement>
     ) => {
         buttonRef.current.style.backgroundColor = "#36a9fb";
-        buttonRef.current.style.border = "solid 1px #35bff8";
+        buttonRef.current.style.border = "none";
         buttonRef.current.style.backgroundImage = "none";
-        buttonRef.current.style.color = "#ffffff";
+        buttonRef.current.style.color = "#5e5e5e";
     };
     const handleUp = (buttonRef: React.MutableRefObject<HTMLButtonElement>) => {
         buttonRef.current.style.backgroundColor = "#52c8f9";
-        buttonRef.current.style.border = "1px solid #35bff8";
+        buttonRef.current.style.border = "none";
         buttonRef.current.style.backgroundImage = "none";
-        buttonRef.current.style.color = "#ffffff";
+        buttonRef.current.style.color = "#5e5e5e";
     };
     return (
         <ButtonWithRef
-            backgroundImage="linear-gradient(to top, #f7f7f7, #ffffff)"
+            backgroundImage="linear-gradient(-60deg, rgb(35, 166, 213), #23d5ab)"
             backgroundColor="none"
-            borderColor="#b6b6b6"
-            borderWidth={1}
-            borderStyle="solid"
+            borderColor="none"
+            borderWidth={0}
+            borderStyle="none"
             color="#5e5e5e"
             handleClick={() => handleClick(props.targetRef)}
             ref={props.buttonRef}

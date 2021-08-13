@@ -3,7 +3,7 @@ import {ProcessBar, ProcessBarProps} from "./index";
 import {Story} from "@storybook/react";
 
 export default {
-    title: "Components/ProcessBar",
+    title: "Components/atom/ProcessBar",
     component: ProcessBar,
 }
 

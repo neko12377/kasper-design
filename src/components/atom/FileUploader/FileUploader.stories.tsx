@@ -3,7 +3,7 @@ import {FileUploader, FileUploaderProps} from "./index";
 import {Story} from "@storybook/react";
 
 export default {
-    title: "Components/FileUploading",
+    title: "Components/atom/FileUploading",
     component: FileUploader,
     argTypes: {change: {action: "uploaded"}}
 }

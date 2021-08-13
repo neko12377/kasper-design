@@ -12,7 +12,6 @@ interface StyledButtonProps {
     borderRadius?: string;
     height?: string;
     width?: string;
-    hoverObject?: any;
 }
 
 const StyledButton = styled.button<StyledButtonProps>`
@@ -31,10 +30,7 @@ const StyledButton = styled.button<StyledButtonProps>`
   background-color: ${props => props.backgroundColor ?? "#ff5243"};
   background-image: ${props => props.backgroundImage ?? "none"};
   color: ${props => props.color ?? "#fff"};
-  transition: background-color 0.3s;
-  &:hover {
-    ${props => props.hoverObject}
-  }
+  transition: 0.5s;
 `;
 
 export interface ButtonProps extends StyledButtonProps {
