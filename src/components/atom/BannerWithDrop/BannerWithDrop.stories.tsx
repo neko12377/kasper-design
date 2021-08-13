@@ -1,5 +1,5 @@
 import React from "react";
-import {BannerWithDropProps, BannerWithDrop} from "./Welcome";
+import {BannerWithDropProps, BannerWithDrop} from "./BannerWithDrop";
 import {Story} from "@storybook/react";
 
 export default {
