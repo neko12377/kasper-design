@@ -1,9 +1,11 @@
 import React from "react";
-import {Welcome} from "./Welcome";
+import {BannerWithDropProps, BannerWithDrop} from "./Welcome";
+import {Story} from "@storybook/react";
 
 export default {
     title: "HomePage/Welcome",
-    component: Welcome,
+    component: BannerWithDrop,
+    argTypes: {title: {defaultValue: "Welcome"}}
 }
 
-export const WelcomeWelcome = () => <Welcome />
+export const WelcomeWelcome:Story<BannerWithDropProps> = (args) => <BannerWithDrop {...args}/>

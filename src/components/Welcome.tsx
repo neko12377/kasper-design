@@ -1,7 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-const WelcomeMessage = styled.h1`
+interface BannerTitleProps {
+    titleShadow: string
+}
+
+const BannerTitle = styled.h1<BannerTitleProps>`
   font-size: 54px;
   background: linear-gradient(#30629b, #69df9d);
   -webkit-background-clip: text;
@@ -10,8 +14,8 @@ const WelcomeMessage = styled.h1`
   cursor: pointer;
   user-select: none;
 
-  &:before {
-    content: "Welcome";
+  &::before {
+    content: "${props => props.titleShadow ?? ""}";
     position: absolute;
     top: 0;
     left: 0;
@@ -33,16 +37,21 @@ const Drop = styled.div`
   height: 50px;
   background: transparent;
   border-radius: 56% 44% 53% 47% / 49% 68% 32% 51%;
-  box-shadow: inset 10px 5px 20px rgba(0, 0, 0, 0.5), 
-              8px 5px 15px rgba(0, 0, 0, 0.7),
-              18px 8px 15px rgba(0, 0, 0, 0.5),
-              inset -2px -2px 2px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 10px 5px 20px rgba(0, 0, 0, 0.5),
+  8px 5px 15px rgba(0, 0, 0, 0.7),
+  18px 8px 15px rgba(0, 0, 0, 0.5),
+    inset -2px -2px 2px rgba(255, 255, 255, 0.1);
 `
 
-export const Welcome = () => {
+export interface BannerWithDropProps {
+    title: string;
+}
+
+export const BannerWithDrop = (props: BannerWithDropProps) => {
+    const {title} = props
     return (
         <React.Fragment>
-            <WelcomeMessage>Welcome</WelcomeMessage>
+            <BannerTitle titleShadow={title}>{title}</BannerTitle>
             <Drop/>
         </React.Fragment>
     )
