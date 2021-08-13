@@ -5,7 +5,45 @@ import {Story} from "@storybook/react";
 export default {
     title: "Components/atom/ButtonWithRef",
     component: ButtonWithRef,
-    argTypes: {handleClick: {action: "clicked"}, children: {defaultValue: "Button"}}
+    argTypes: {
+        children: {defaultValue: "Button"},
+        handleClick: {
+            action: "clicked",
+            table: {
+                disable: true,
+            }
+        },
+        handlePress: {
+            table: {
+                disable: true,
+            }
+        },
+        handleHover: {
+            table: {
+                disable: true,
+            }
+        },
+        handleLeave: {
+            table: {
+                disable: true,
+            }
+        },
+        handleUp: {
+            table: {
+                disable: true,
+            }
+        },
+        handleTouchStart: {
+            table: {
+                disable: true,
+            }
+        },
+        handleTouchEnd: {
+            table: {
+                disable: true,
+            }
+        },
+    }
 }
 
 const BasicTemplate: Story<ButtonProps> = (args) => {
@@ -28,7 +66,7 @@ const BasicTemplate: Story<ButtonProps> = (args) => {
     args.handleTouchEnd = () => {
         buttonRef.current.style.backgroundColor = "#fc5c4f";
     }
-    return <ButtonWithRef {...args} ref={buttonRef} />
+    return <ButtonWithRef {...args} ref={buttonRef}/>
 }
 export const Basic = BasicTemplate.bind({});
 Basic.args = {
@@ -55,7 +93,7 @@ const LakeTemplate: Story<ButtonProps> = (args) => {
     args.handleTouchEnd = () => {
         buttonRef.current.style.backgroundColor = "#7dd3d3";
     }
-    return <ButtonWithRef {...args} ref={buttonRef} />
+    return <ButtonWithRef {...args} ref={buttonRef}/>
 }
 
 export const Lake = LakeTemplate.bind({});

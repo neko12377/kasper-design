@@ -27,12 +27,14 @@ export default {
     component: CopyButton,
     argTypes: {
         buttonRef: {
-            options: ["not available"],
-            control: {type: "radio"},
+            table: {
+                disable: true,
+            }
         },
         targetRef: {
-            options: ["not available"],
-            control: {type: "radio"},
+            table: {
+                disable: true,
+            }
         }
     },
 }

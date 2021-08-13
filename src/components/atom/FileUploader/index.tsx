@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   align-items: center;
   column-gap: 10px;
   flex-direction: column;
-  row-gap: 10px;
+  row-gap: 20px;
 `;
 
 const UploadImgBlock = styled.img`
@@ -48,7 +48,7 @@ const UploadImgInputLabel = styled.label.attrs({for: "uploadInput"})`
   line-height: normal;
   cursor: pointer;
   position: relative;
-  
+
   &:before {
     content: "";
     position: absolute;
@@ -60,7 +60,7 @@ const UploadImgInputLabel = styled.label.attrs({for: "uploadInput"})`
     filter: blur(10px);
     transform: translateY(35px) scale(0.9);
   }
-  
+
   & span {
     position: relative;
     color: #0350c7;
@@ -72,18 +72,18 @@ const UploadImgInputLabel = styled.label.attrs({for: "uploadInput"})`
     background-size: 200% 400%;
     animation: gradient ease infinite 6s;
   }
-  
+
   @keyframes gradient {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }  
+    0% {
+      background-position: 0% 50%;
     }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 `;
 
 export interface FileUploaderProps {
@@ -91,18 +91,18 @@ export interface FileUploaderProps {
 
 export const FileUploader = (props: FileUploaderProps) => {
     const [preview, setPreview] = useState("");
-    const pictPicture = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const pickPicture = useCallback(() => (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
         const fileReader = new FileReader();
         fileReader.addEventListener("load", () => {
             setPreview(fileReader.result as string)
         })
         file && fileReader.readAsDataURL(file);
-    }
+    }, []);
     return (
         <Wrapper>
             <UploadImgBlock src={preview}/>
-            <UploadImgInput onChange={pictPicture}/>
+            <UploadImgInput onChange={pickPicture}/>
             <UploadImgInputLabel>
                 <span>pick a picture</span>
             </UploadImgInputLabel>
