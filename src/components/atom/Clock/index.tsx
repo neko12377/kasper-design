@@ -159,7 +159,7 @@ export const Clock = (props: ClockProps) => {
             const position = sinLength / Math.sin(radian(90)) * Math.sin(radian(90 - numberSideDegree));
             return clockNumber > 3 && clockNumber < 9 ? diameter - position - numberSize / 2 : position - numberSize / 2;
         };
-        return <ClockNumber top={top()} left={left()} numberSize={props.numberSize}>{index + 1}</ClockNumber>
+        return <ClockNumber key={clockNumber + "o'clock"} top={top()} left={left()} numberSize={props.numberSize}>{index + 1}</ClockNumber>
     });
 
     const hourHandDegrees = useRef(0);
