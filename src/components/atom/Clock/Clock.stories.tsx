@@ -5,13 +5,19 @@ import {Story} from "@storybook/react";
 export default {
     title: "Components/atom/Clock",
     component: Clock,
+    argTypes: {
+        diameter: {
+            defaultValue: 200,
+        },
+        numberSize: {
+            defaultValue: 1.5,
+        },
+        middleCircle:{
+            defaultValue: 10,
+        },
+    }
 }
 
 const Template: Story<ClockProps> = (args) => <Clock {...args}/>
 
 export const Basic = Template.bind({})
-Basic.args = {
-    diameter: 200,
-    numberSize: 1.5,
-    middleCircle: 10,
-}

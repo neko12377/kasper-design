@@ -11,8 +11,8 @@ const OuterClock = styled.div<CircleProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: ${props => props.diameter ? props.diameter * 1.3 : 450}px;
-  height: ${props => props.diameter ? props.diameter * 1.3 : 450}px;
+  width: ${props => props.diameter ? props.diameter * 1.35 : 467}px;
+  height: ${props => props.diameter ? props.diameter * 1.35 : 467}px;
   background: ${props => props.background ?? "#091921"};
   border-radius: 50%;
 `
@@ -25,7 +25,7 @@ const ClockWrapper = styled.div<CircleProps>`
   height: ${props => props.diameter ? props.diameter * 1.2 : 420}px;
   border-radius: 50%;
   background: ${props => props.background ?? "#091921"};;
-  border: solid 4px ${props => props.background ?? "#091921"};
+  border: solid 8px ${props => props.background ?? "#091921"};
   box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
   inset 0 -15px 15px rgba(255, 255, 255, 0.05),
   0 15px 15px rgba(0, 0, 0, 0.3),
@@ -74,7 +74,7 @@ const StyledHourHand = styled(StyledHands)`
     content: "";
     width: 8px;
     height: 50%;
-    background: red;
+    background: #e8386a;
     border-radius: 6px;
   }
 `
@@ -104,7 +104,7 @@ const StyledSecondHand = styled(StyledHands)`
     content: "";
     width: 2px;
     height: 65%;
-    background: #fff;
+    background: #2d6799;
     border-radius: 6px;
   }
 `
