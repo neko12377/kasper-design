@@ -5,5 +5,7 @@ import {PopUpModel} from "./PopUpModel";
 import {ProcessBar} from "./ProcessBar";
 import {BannerWithDrop} from "./BannerWithDrop/BannerWithDrop";
 import {Clock} from "./Clock";
+import {PlayButton} from "./RoundedPlayerButton/PlayButton";
+import {PreOrNextButton} from "./RoundedPlayerButton/PreOrNextButton";
 
-export {ButtonWithRef, FileUploader, MinuteTimer, PopUpModel, ProcessBar, BannerWithDrop, Clock}
+export {ButtonWithRef, FileUploader, MinuteTimer, PopUpModel, ProcessBar, BannerWithDrop, Clock, PlayButton, PreOrNextButton}

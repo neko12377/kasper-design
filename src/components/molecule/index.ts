@@ -1,3 +1,4 @@
 import {CopyButton} from "./CopyButton";
+import {MusicPlayer} from "./MusicPlayer";
 
-export {CopyButton};
+export {CopyButton, MusicPlayer};
