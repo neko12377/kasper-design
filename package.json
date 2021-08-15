@@ -1,6 +1,6 @@
 {
   "name": "kasper-design",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -15,6 +15,10 @@
     "build-npmpackage": "tsc --project tsconfig.json"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-regular-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.15",
     "@storybook/addon-actions": "^6.2.9",
     "@storybook/addon-essentials": "^6.2.9",
     "@storybook/addon-links": "^6.2.9",
@@ -22,9 +26,9 @@
     "@types/react": "^17.0.11",
     "@types/react-dom": "^17.0.6",
     "@types/styled-components": "^5.1.10",
-    "storybook": "^6.2.9",
+    "storybook": "^6.3.7",
     "ts-loader": "^9.2.3",
-    "typescript": "^4.3.4"
+    "typescript": "4.2.4"
   },
   "dependencies": {
     "react": "^17.0.2",

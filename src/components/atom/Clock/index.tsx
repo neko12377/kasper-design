@@ -132,7 +132,7 @@ export interface ClockProps extends CircleProps {
     numberSize?: number;
 }
 
-export const Clock = (props: ClockProps) => {
+export const Clock = React.memo((props: ClockProps) => {
     const diameter = props.diameter ?? 350;
     const radius = diameter / 2;
     const numberSize = diameter / 10;
@@ -189,5 +189,4 @@ export const Clock = (props: ClockProps) => {
             </ClockWrapper>
         </OuterClock>
     )
-
-}
+})
